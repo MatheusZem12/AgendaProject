@@ -19,7 +19,7 @@ django.setup()
 if __name__ == '__main__':
     import faker
 
-    from contact.models import Category, Contact
+    from contact.models import Contact, Category
 
     Contact.objects.all().delete()
     Category.objects.all().delete()
