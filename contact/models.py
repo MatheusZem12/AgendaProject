@@ -11,7 +11,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     def __str__(self) -> str:
-        return self.name
+        return f'{self.name}'
 
 
 class Contact(models.Model):

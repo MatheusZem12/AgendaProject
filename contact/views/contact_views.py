@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from contact.models import Contact
 
 def find_all_contact(request):
@@ -6,5 +6,5 @@ def find_all_contact(request):
     return render(request, 'contact/index.html', context = {'contacts': contacts})
 
 def find_contact_by_id(request, contact_id):
-    single_contact = Contact.objects.filter(id=contact_id).first()
+    single_contact = get_object_or_404(Contact, id=contact_id)
     return render(request, 'contact/contact.html', context={'contact': single_contact})

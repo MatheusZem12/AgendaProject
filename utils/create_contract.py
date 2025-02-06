@@ -26,6 +26,7 @@ if __name__ == '__main__':
 
     fake = faker.Faker('pt_BR')
     categories = ['Amigos', 'Família', 'Conhecidos']
+    img_url = ['']
 
     django_categories = [Category(name=name) for name in categories]
 
@@ -42,6 +43,7 @@ if __name__ == '__main__':
         created_date: datetime = fake.date_this_year()
         description = fake.text(max_nb_chars=100)
         category = choice(django_categories)
+        picture = fake.image_url()
 
         django_contacts.append(
             Contact(
@@ -52,6 +54,7 @@ if __name__ == '__main__':
                 created_date=created_date,
                 description=description,
                 category=category,
+                picture=picture
             )
         )
 
