@@ -11,7 +11,8 @@ class AdminCategory(admin.ModelAdmin):
 
 @admin.register(Contact)
 class AdminContact(admin.ModelAdmin):
-    list_display = 'id', 'first_name', 'last_name', 'owner'
+    list_display = 'id', 'first_name', 'last_name', 'owner', 'show'
+    list_editable = 'show',
     ordering = 'id',
     search_fields = 'first_name', 'last_name'
     list_per_page = 10
