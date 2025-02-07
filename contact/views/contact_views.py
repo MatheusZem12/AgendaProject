@@ -13,7 +13,6 @@ def search_contact(request):
     print(search)
     contacts = Contact.objects.filter(
         Q(first_name__icontains=search) |
-        Q(email__icontains=search) |
         Q(id__icontains=search)
     )
     print(contacts.query)
